@@ -54,6 +54,6 @@ model = keras.Sequential([Dense(16, activation="relu") for _ in range(1)] + [Den
 model.compile(keras.optimizers.Adam(), loss="mse")
 x, y = datasets[0, :, :NUM_FEATURES], datasets[0, :, NUM_FEATURES:]
 print(x.shape, y.shape)
-model.fit(x, y, validation_split=0.1, epochs=10, shuffle=True)
+model.fit(x, y, validation_split=0.5, epochs=10, shuffle=True)
 # model.fit(x[:500], y[:500], epochs=1000, validation_data=(x[500:], y[500:]))
 print(model.evaluate(x, y))
